@@ -132,7 +132,7 @@ class PDFDocumentWithTables extends PDFDocument {
           let lockAddTitles   = false; // to addd title one time
           let lockAddPage     = false;
           let lockAddHeader   = false;
-          let safelyMarginBottom = this.page.margins.top/2 + 14; 
+          let safelyMarginBottom = this.page.margins.top/2 + 36; 
           
         // reset position to margins.left
         if( options.x === null || options.x === -1 ){
@@ -657,7 +657,7 @@ class PDFDocumentWithTables extends PDFDocument {
           // For safety, consider 3 rows margin instead of just one
           // if (startY + 2 * rowHeight < maxY) startY = rowBottomY + columnSpacing + rowDistance; // 0.5 is spacing rows
           // else this.emitter.emit('addPage'); //this.addPage();
-          if (options.useSafelyMarginBottom && rowBottomY + (rowHeight * 4) + columnSpacing + safelyMarginBottom >= maxY && !lockAddPage) onFirePageAdded(); // this.emitter.emit('addPage'); //this.addPage();    
+          if (options.useSafelyMarginBottom && rowBottomY + (rowHeight * 8) + columnSpacing + safelyMarginBottom >= maxY && !lockAddPage) onFirePageAdded(); // this.emitter.emit('addPage'); //this.addPage();    
 
           // calc position
           startY = rowBottomY + columnSpacing + rowDistance; // 0.5 is spacing rows
@@ -807,7 +807,7 @@ class PDFDocumentWithTables extends PDFDocument {
           // For safety, consider 3 rows margin instead of just one
           // if (startY + 3 * rowHeight < maxY) startY = rowBottomY + columnSpacing + rowDistance; // 0.5 is spacing rows
           // else this.emitter.emit('addPage'); //this.addPage(); 
-          if (options.useSafelyMarginBottom && rowBottomY + (rowHeight * 4) + columnSpacing + safelyMarginBottom >= maxY && !lockAddPage) onFirePageAdded(); // this.emitter.emit('addPage'); //this.addPage();    
+          if (options.useSafelyMarginBottom && rowBottomY + (rowHeight * 8) + columnSpacing + safelyMarginBottom >= maxY && !lockAddPage) onFirePageAdded(); // this.emitter.emit('addPage'); //this.addPage();    
           
           // calc position
           startY = rowBottomY + columnSpacing + rowDistance; // 0.5 is spacing rows
