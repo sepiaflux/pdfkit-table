@@ -807,7 +807,7 @@ class PDFDocumentWithTables extends PDFDocument {
           // For safety, consider 3 rows margin instead of just one
           // if (startY + 3 * rowHeight < maxY) startY = rowBottomY + columnSpacing + rowDistance; // 0.5 is spacing rows
           // else this.emitter.emit('addPage'); //this.addPage(); 
-          if (options.useSafelyMarginBottom && rowBottomY + (rowHeight * 4) + columnSpacing + safelyMarginBottom >= maxY && !lockAddPage) onFirePageAdded(); // this.emitter.emit('addPage'); //this.addPage();    
+          if (options.useSafelyMarginBottom && rowBottomY + (rowHeight * 2) + columnSpacing + safelyMarginBottom >= maxY && !lockAddPage) onFirePageAdded(); // this.emitter.emit('addPage'); //this.addPage();    
           
           // calc position
           startY = rowBottomY + columnSpacing + rowDistance; // 0.5 is spacing rows
